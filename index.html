@@ -10,6 +10,62 @@
         }
     </style>
     <script type="application/javascript">
+        let grid = [
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,1,0,0,0,0,0,0,2,2,2,2,2,2,0,0,0,0,1,0,0,0,0,0,0],
+                    [0,0,1,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,1,1,0,2,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,9,0,0,0,0,1,1,0,2,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,2,2,2,2,2,2,2,0,0,0,0,1,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                ];
+
+        let gridSize = 32;
+
+        function drawGrid(ctx)
+        {
+            for(let y=0; y< grid.length; y++)
+            {
+                for(let x=0; x <grid[y].length; x++)
+                {
+                    if(grid[y][x] === 1)
+                    {
+                        ctx.fillStyle = 'blue';
+                        ctx.fillRect(x*gridSize, y*gridSize, gridSize, gridSize);  
+                    }
+                    else if(grid[y][x] === 2)
+                    {
+                        ctx.fillStyle = 'red';
+                        ctx.fillRect(x*gridSize, y*gridSize, gridSize, gridSize);  
+                    }else if(grid[y][x] === 9)
+                    {
+                        drawCamera(x, y, ctx);
+                    }
+                    
+                    ctx.strokeStyle = 'lightgrey';
+                    ctx.strokeRect(x*gridSize, y*gridSize, gridSize, gridSize);            
+                }
+            }
+        }
+
+        function drawCamera(x, y, ctx)
+        {
+            ctx.beginPath();
+            ctx.arc(x*gridSize + gridSize/2, y*gridSize + gridSize/2, gridSize/2, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
         function draw() {
             let canvas = document.getElementById("graph");
             if (canvas.getContext) {
@@ -17,7 +73,9 @@
                 var ctx = canvas.getContext("2d");
                 let width = 800;
                 let height = 600;
-                ctx.clearRect(0, 0, width, height);                
+                ctx.clearRect(0, 0, width, height);
+                
+                drawGrid(ctx);              
             }
         }
 
@@ -25,7 +83,7 @@
 </head>
 
 <body onload="draw();" onkeypress="KeyHandle(event)">
-    <canvas id="graph" width="320" height="240">
+    <canvas id="graph" width="800" height="600">
         <p>Fallback content</p>
     </canvas>
 </body>
