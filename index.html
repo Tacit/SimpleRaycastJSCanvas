@@ -11,25 +11,25 @@
     </style>
     <script type="application/javascript">
         let grid = [
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,1,0,0,0,0,0,0,2,2,2,2,2,2,0,0,0,0,1,0,0,0,0,0,0],
-                    [0,0,1,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,9,0,0,0,0,1,1,0,2,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,1,1,0,2,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,2,2,2,2,2,2,2,0,0,0,0,1,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-                ];
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ];
 
         let gridSize = 32;
         let cameraPosition = {};
@@ -38,61 +38,55 @@
         let distance = 10;
         let raysCount = 300;
         let rayStep = 1;
-        
+        let turnRate = 1;
 
-        function drawGrid(ctx)
-        {
-            for(let y=0; y< grid.length; y++)
-            {
-                for(let x=0; x <grid[y].length; x++)
-                {
-                    if(grid[y][x] === 1)
-                    {
+
+        function drawGrid(ctx) {
+            for (let y = 0; y < grid.length; y++) {
+                for (let x = 0; x < grid[y].length; x++) {
+                    if (grid[y][x] === 1) {
                         ctx.fillStyle = 'blue';
-                        ctx.fillRect(x*gridSize, y*gridSize, gridSize, gridSize);  
+                        ctx.fillRect(x * gridSize, y * gridSize, gridSize, gridSize);
                     }
-                    else if(grid[y][x] === 2)
-                    {
+                    else if (grid[y][x] === 2) {
                         ctx.fillStyle = 'red';
-                        ctx.fillRect(x*gridSize, y*gridSize, gridSize, gridSize);  
-                    }else if(grid[y][x] === 9)
-                    {
+                        ctx.fillRect(x * gridSize, y * gridSize, gridSize, gridSize);
+                    } else if (grid[y][x] === 9) {
                         cameraPosition.X = x;
                         cameraPosition.Y = y;
                     }
-                    
+
                     ctx.strokeStyle = 'lightgrey';
-                    ctx.strokeRect(x*gridSize, y*gridSize, gridSize, gridSize);   
+                    ctx.strokeRect(x * gridSize, y * gridSize, gridSize, gridSize);
                 }
             }
         }
 
-        function drawCamera(cameraPosition, ctx)
-        {
-            let xPosition = cameraPosition.X*gridSize + gridSize/2;
-            let yPosition = cameraPosition.Y*gridSize + gridSize/2;
+        function drawCamera(cameraPosition, ctx) {
+            let xPosition = cameraPosition.X * gridSize + gridSize / 2;
+            let yPosition = cameraPosition.Y * gridSize + gridSize / 2;
             let rayLength = distance * gridSize;
-            let point = {};            
+            let point = {};
 
             for (let i = -fov / 2; i < fov / 2; i += fov / raysCount) {
                 for (let j = rayStep; j < rayLength; j += rayStep) {
                     point = rotatePoint(xPosition, yPosition, xPosition + j, yPosition, Math.PI * (i - angle) / 180);
-                    
-                    if(checkRayCollision(point.X, point.Y)) {
+
+                    if (checkRayCollision(point.X, point.Y)) {
                         break;
                     }
                 }
-                
+
                 ctx.strokeStyle = 'black';
                 ctx.beginPath();
                 ctx.moveTo(xPosition, yPosition);
                 ctx.lineTo(point.X, point.Y);
                 ctx.stroke();
             }
-            
+
             ctx.fillStyle = "black"
             ctx.beginPath();
-            ctx.arc(xPosition, yPosition, gridSize/2 - 1, 0, 2 * Math.PI);
+            ctx.arc(xPosition, yPosition, gridSize / 2 - 1, 0, 2 * Math.PI);
             ctx.fill();
         }
 
@@ -105,28 +99,26 @@
 
         function getCellNumberFromCoordinate(x, y) {
             let point = {};
-            point.X = Math.floor(x/gridSize);
-            point.Y = Math.floor(y/gridSize);
+            point.X = Math.floor(x / gridSize);
+            point.Y = Math.floor(y / gridSize);
             return point;
         }
 
-        function checkRayCollision(x, y)
-        {
-            currentCell= getCellNumberFromCoordinate(x, y);
+        function checkRayCollision(x, y) {
+            currentCell = getCellNumberFromCoordinate(x, y);
 
-            if(currentCell.X < 0 || currentCell.Y < 0) {
+            if (currentCell.X < 0 || currentCell.Y < 0) {
                 return true;
             }
-            if(currentCell.Y > grid.length-1) {
-                return true;
-            }
-
-            if(currentCell.X > grid[currentCell.Y].length-1) {
+            if (currentCell.Y > grid.length - 1) {
                 return true;
             }
 
-            if(grid[currentCell.Y][currentCell.X] > 00 && grid[currentCell.Y][currentCell.X] < 9)
-            {
+            if (currentCell.X > grid[currentCell.Y].length - 1) {
+                return true;
+            }
+
+            if (grid[currentCell.Y][currentCell.X] > 00 && grid[currentCell.Y][currentCell.X] < 9) {
                 return true;
             }
 
@@ -136,21 +128,37 @@
         function draw() {
             let canvas = document.getElementById("graph");
             if (canvas.getContext) {
-				/** @type {CanvasRenderingContext2D}*/
+                /** @type {CanvasRenderingContext2D}*/
                 var ctx = canvas.getContext("2d");
                 let width = 800;
                 let height = 600;
                 ctx.clearRect(0, 0, width, height);
-                
-                drawGrid(ctx);      
-                drawCamera(cameraPosition, ctx);        
+
+                drawGrid(ctx);
+                drawCamera(cameraPosition, ctx);
             }
+        }
+
+        function KeyHandle(e) {
+            switch (event.code) {
+                case "KeyA":
+                case "ArrowLeft":
+                    // Handle "turn left"
+                    angle -= turnRate;
+                    break;
+                case "KeyD":
+                case "ArrowRight":
+                    // Handle "turn right"
+                    angle += turnRate;
+                    break;
+            }
+            draw();
         }
 
     </script>
 </head>
 
-<body onload="draw();" onkeypress="KeyHandle(event)">
+<body onload="draw();" onkeydown="KeyHandle(event)">
     <canvas id="graph" width="800" height="600">
         <p>Fallback content</p>
     </canvas>
