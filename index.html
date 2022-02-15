@@ -34,11 +34,12 @@
         let gridSize = 32;
         let cameraPosition = {};
         let fov = 60;
-        let angle = -35;
+        let angle = 0;
         let distance = 10;
-        let raysCount = 300;
+        let raysCount = 320;
         let rayStep = 1;
         let turnRate = 1;
+        let moveSpeed = 5;
 
 
         function drawGrid(ctx) {
@@ -51,9 +52,9 @@
                     else if (grid[y][x] === 2) {
                         ctx.fillStyle = 'red';
                         ctx.fillRect(x * gridSize, y * gridSize, gridSize, gridSize);
-                    } else if (grid[y][x] === 9) {
-                        cameraPosition.X = x;
-                        cameraPosition.Y = y;
+                    } else if (grid[y][x] === 9 && cameraPosition.X == null) {
+                        cameraPosition.X = x * gridSize + gridSize / 2;
+                        cameraPosition.Y = y * gridSize + gridSize / 2;
                     }
 
                     ctx.strokeStyle = 'lightgrey';
@@ -63,14 +64,14 @@
         }
 
         function drawCamera(cameraPosition, ctx) {
-            let xPosition = cameraPosition.X * gridSize + gridSize / 2;
-            let yPosition = cameraPosition.Y * gridSize + gridSize / 2;
+            let xPosition = cameraPosition.X;
+            let yPosition = cameraPosition.Y;
             let rayLength = distance * gridSize;
             let point = {};
 
             for (let i = -fov / 2; i < fov / 2; i += fov / raysCount) {
                 for (let j = rayStep; j < rayLength; j += rayStep) {
-                    point = rotatePoint(xPosition, yPosition, xPosition + j, yPosition, Math.PI * (i - angle) / 180);
+                    point = rotatePoint(xPosition, yPosition, xPosition + j, yPosition, Math.PI * (i + angle) / 180);
 
                     if (checkRayCollision(point.X, point.Y)) {
                         break;
@@ -143,13 +144,21 @@
             switch (event.code) {
                 case "KeyA":
                 case "ArrowLeft":
-                    // Handle "turn left"
                     angle -= turnRate;
                     break;
                 case "KeyD":
                 case "ArrowRight":
-                    // Handle "turn right"
                     angle += turnRate;
+                    break;
+                case "KeyW":
+                case "ArrowUp":
+                    cameraPosition.X += moveSpeed * Math.cos(Math.PI * (angle) / 180);
+                    cameraPosition.Y += moveSpeed * Math.sin(Math.PI * (angle) / 180);
+                    break;
+                case "KeyS":
+                case "ArrowDown":
+                    cameraPosition.X -= moveSpeed * Math.cos(Math.PI * (angle) / 180);
+                    cameraPosition.Y -= moveSpeed * Math.sin(Math.PI * (angle) / 180);
                     break;
             }
             draw();
