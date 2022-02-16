@@ -35,9 +35,9 @@
         let cameraPosition = {};
         let fov = 60;
         let angle = 0;
-        let distance = 120;
+        let distance = 240;
         let raysCount = 320;
-        let rayStep = 1;
+        let rayStep = 0.1;
         let turnRate = 5;
         let moveSpeed = 5;
         let viewportHeight = 240;
@@ -70,19 +70,16 @@
             let yPosition = cameraPosition.Y;
             let rayLength = distance;
             let point = {};
-            let ray = {};
             rays = [];
-            for (let i = -fov / 2; i < fov / 2; i += fov / raysCount) {
-                ray = {};
+            for (let i = angle - fov / 2; i < angle + fov / 2; i += fov / raysCount) {
                 for (let j = rayStep; j < rayLength; j += rayStep) {
-                    point = rotatePoint(xPosition, yPosition, xPosition + j, yPosition, Math.PI * (i + angle) / 180);
-                    ray.length = j;
-                    ray.angle = i;
+                    point.X = xPosition + j * Math.cos(i * Math.PI / 180);
+                    point.Y = yPosition + j * Math.sin(i * Math.PI / 180);
                     if (checkRayCollision(point.X, point.Y)) {
+                        rays.push(j * Math.cos((i - angle) * Math.PI / 180));
                         break;
                     }
                 }
-                rays.push(ray);
                 ctx.strokeStyle = 'black';
                 ctx.beginPath();
                 ctx.moveTo(xPosition, yPosition);
@@ -94,13 +91,6 @@
             ctx.beginPath();
             ctx.arc(xPosition, yPosition, gridSize / 2 - 1, 0, 2 * Math.PI);
             ctx.fill();
-        }
-
-        function rotatePoint(startX, startY, endX, endY, angle) {
-            let point = {}
-            point.X = startX + (endX - startX) * Math.cos(angle) - (endY - startY) * Math.sin(angle);
-            point.Y = startY + (endX - startX) * Math.sin(angle) + (endY - startY) * Math.cos(angle);
-            return point;
         }
 
         function getCellNumberFromCoordinate(x, y) {
@@ -163,7 +153,7 @@
 
                 let scale = viewportHeight / distance;
                 for (let i = 0; i < rays.length; i++) {
-                    let l = viewportHeight - scale * rays[i].length * Math.cos(rays[i].angle * Math.PI / 180);
+                    let l = viewportHeight / rays[i] * 10;
                     ctx.strokeStyle = `rgb(${l}, ${l}, ${l})`;
                     ctx.beginPath();
                     ctx.moveTo(i, viewportHeight / 2 - l / 2);
