@@ -11,35 +11,37 @@
     </style>
     <script type="application/javascript">
         let grid = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 1, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 1, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 9, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         ];
 
-        let gridSize = 32;
+        let gridSize = 16;
         let cameraPosition = {};
         let fov = 60;
         let angle = 0;
-        let distance = 10;
+        let distance = 100;
         let raysCount = 320;
         let rayStep = 1;
-        let turnRate = 1;
+        let turnRate = 5;
         let moveSpeed = 5;
+        let viewportHeight = 240;
+        let rays = [];
 
 
         function drawGrid(ctx) {
@@ -66,18 +68,21 @@
         function drawCamera(cameraPosition, ctx) {
             let xPosition = cameraPosition.X;
             let yPosition = cameraPosition.Y;
-            let rayLength = distance * gridSize;
+            let rayLength = distance;
             let point = {};
-
+            let ray = {};
+            rays = [];
             for (let i = -fov / 2; i < fov / 2; i += fov / raysCount) {
+                ray = {};
                 for (let j = rayStep; j < rayLength; j += rayStep) {
                     point = rotatePoint(xPosition, yPosition, xPosition + j, yPosition, Math.PI * (i + angle) / 180);
-
+                    ray.length = j;
+                    ray.angle = i;
                     if (checkRayCollision(point.X, point.Y)) {
                         break;
                     }
                 }
-
+                rays.push(ray);
                 ctx.strokeStyle = 'black';
                 ctx.beginPath();
                 ctx.moveTo(xPosition, yPosition);
@@ -130,15 +135,46 @@
             let canvas = document.getElementById("graph");
             if (canvas.getContext) {
                 /** @type {CanvasRenderingContext2D}*/
-                var ctx = canvas.getContext("2d");
+                let ctx = canvas.getContext("2d");
                 let width = 800;
                 let height = 600;
                 ctx.clearRect(0, 0, width, height);
 
                 drawGrid(ctx);
                 drawCamera(cameraPosition, ctx);
+                draw3d();
             }
         }
+
+        function draw3d() {
+            let canvas = document.getElementById("graph3d");
+            if (canvas.getContext) {
+                /** @type {CanvasRenderingContext2D}*/
+                let ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, raysCount, viewportHeight);
+                ctx.fillStyle = "darkblue"
+                ctx.beginPath();
+                ctx.rect(0, 0, raysCount, viewportHeight / 2);
+                ctx.fill();
+                ctx.fillStyle = "green"
+                ctx.beginPath();
+                ctx.rect(0, viewportHeight / 2, raysCount, viewportHeight);
+                ctx.fill();
+
+                let scale = viewportHeight / distance;
+                for (let i = 0; i < rays.length; i++) {
+                    let l = viewportHeight - (scale * rays[i].length);
+
+                    ctx.strokeStyle = `rgb(${l}, ${l}, ${l})`;
+                    ctx.beginPath();
+                    ctx.moveTo(i, viewportHeight / 2 - l / 2);
+                    ctx.lineTo(i, viewportHeight / 2 + l / 2);
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                };
+            }
+        }
+
 
         function KeyHandle(e) {
             switch (event.code) {
@@ -168,9 +204,15 @@
 </head>
 
 <body onload="draw();" onkeydown="KeyHandle(event)">
-    <canvas id="graph" width="800" height="600">
-        <p>Fallback content</p>
-    </canvas>
+    <div>
+        <canvas id="graph" width="400" height="300">
+            <p>Fallback content</p>
+        </canvas>
+
+        <canvas id="graph3d" width="320" height="240">
+            <p>Fallback content</p>
+        </canvas>
+    </div>
 </body>
 
 </html>
