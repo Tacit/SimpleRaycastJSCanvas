@@ -35,7 +35,7 @@
         let cameraPosition = {};
         let fov = 60;
         let angle = 0;
-        let distance = 100;
+        let distance = 120;
         let raysCount = 320;
         let rayStep = 1;
         let turnRate = 5;
@@ -163,8 +163,7 @@
 
                 let scale = viewportHeight / distance;
                 for (let i = 0; i < rays.length; i++) {
-                    let l = viewportHeight - (scale * rays[i].length);
-
+                    let l = viewportHeight - scale * rays[i].length * Math.cos(rays[i].angle * Math.PI / 180);
                     ctx.strokeStyle = `rgb(${l}, ${l}, ${l})`;
                     ctx.beginPath();
                     ctx.moveTo(i, viewportHeight / 2 - l / 2);
