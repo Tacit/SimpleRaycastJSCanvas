@@ -37,7 +37,7 @@
         let angle = 0;
         let distance = 240;
         let raysCount = 320;
-        let rayStep = 1;
+        let rayStep = 0.1;
         let turnRate = 5;
         let moveSpeed = 5;
         let viewportHeight = 240;
@@ -70,16 +70,19 @@
             let yPosition = cameraPosition.Y;
             let rayLength = distance;
             let point = {};
+            let length;
             rays = [];
             for (let i = angle - fov / 2; i < angle + fov / 2; i += fov / raysCount) {
                 for (let j = rayStep; j < rayLength; j += rayStep) {
                     point.X = xPosition + j * Math.cos(i * Math.PI / 180);
                     point.Y = yPosition + j * Math.sin(i * Math.PI / 180);
+                    length = j;
                     if (checkRayCollision(point.X, point.Y)) {
-                        rays.push(j * Math.cos((i - angle) * Math.PI / 180));
                         break;
                     }
                 }
+
+                rays.push(length * Math.cos((i - angle) * Math.PI / 180));
                 ctx.strokeStyle = 'black';
                 ctx.beginPath();
                 ctx.moveTo(xPosition, yPosition);
